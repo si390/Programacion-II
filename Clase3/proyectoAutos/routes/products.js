@@ -3,7 +3,7 @@ const router = express.Router();
 
 const datosAutos = require('../db/index');
 router.get('/products', function (req, res) {
-    return res.send(datosAutos);
+    res.send(datosAutos);
 });
 
 router.get('/products/brand', function (req,res) {
