@@ -4,13 +4,13 @@ const productosController = require('../controllers/productController');
 const router = express.Router();
 
 
-router.get('/:idProducto', productosController.index);
+router.get('/products', productosController.index);
 
-router.get('/:idProducto/marca', productosController.marca);
+router.get('/marca', productosController.marca);
  
-router.get('/:idProducto/color', productosController.color);
+router.get('/color', productosController.color);
 
-router.get('/:idProducto/anio', productosController.anio);
+router.get('/anio', productosController.anio);
 
 
 module.exports = router; 
