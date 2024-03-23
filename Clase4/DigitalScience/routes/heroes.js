@@ -14,3 +14,6 @@ router.get('/detalle/id/{id}', function (req,res) {
  
 
 module.exports = router;
+
+
+
