@@ -1,19 +1,18 @@
 const index = require('../db/index')
+let bandas = [index.lista];
 const bandascontroller = {
-    detalleBandas: function(req,res){
-        let bandas = [index.lista];
+    detalleBandas: (req,res) =>{
         return res.render('detalleBandas', {
-                                            nombre:bandas.nombre,
-                                            integrante: bandas.integrantes,
-                                            topCanciones: bandas.topCanciones,
+                                        nombre:bandas.nombre,
+                                        integrante: bandas.integrantes,
+                                        topCanciones: bandas.topCanciones,
 
         })},
-    listadoBandas: function(req,res){
-        let bandas = [index.lista];
+    listadoBandas: (req,res) =>{
         return res.render('listadoBandas', {
-                                            id:bandas.id,
-                                            video: bandas.video,
-                                            cover: bandas.cover,
+                                        id:bandas.id,
+                                        video: bandas.video,
+                                        cover: bandas.cover,
 
         })},
     genero: (req,res) => {
