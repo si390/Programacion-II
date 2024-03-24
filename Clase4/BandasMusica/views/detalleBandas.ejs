@@ -6,7 +6,18 @@
   </head>
   <body>
     <h1>DETALLE</h1>
-    <p>Detalle de cada banda</p>
-    <img src="acdc.jpg" alt="">
+    <h2>Nombre de la banda: <%= nombre %></h2>
+    <h3>Integrantes de la banda:</h3>
+    <ol>
+      <li><%= integrante %></li>
+    </ol>
+    <h3>Top Canciones:</h3>
+    <ol>
+      <li><%= topCanciones %></li>
+    </ol>
+    <img src="images/acdc.jpg" alt="">
   </body>
 </html>
+
+///<% %> permite incorporar condicionales y bucles
+///<%= %> permite imprimir un valor dinámico

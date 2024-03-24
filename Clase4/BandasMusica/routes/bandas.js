@@ -3,20 +3,20 @@ var router = express.Router();
 var bandasController = require('../controllers/bandaControllers');
 
 /* GET bandas page. */
-router.get('/', function(req, res) {
-    res.render('listadoBandas')
-});
-router.get('/', function(req, res) {
-    res.send(JSON.stringify(bandasController))
-});
+router.get('/', bandasController.listadoBandas); {
+    let idBanda = req.params.id;
+    res.send(idBanda);
+};
 
-router.get('/detalle', function(req, res) {
-    res.render('detalleBandas')
-});
+router.get('/:id', bandasController.detalleBandas); {
+    let idBanda = req.params.id;
+    res.send(idBanda);
+};
 
-router.get('/detalle/id/{id}', function (req,res) {
-    res.send(bandasController.nombre);
-});
+router.get('/genero}', bandasController.genero); {
+    let idBanda = req.params.id;
+    res.send(idBanda);
+};
 
  
 
