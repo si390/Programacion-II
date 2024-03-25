@@ -1,5 +1,5 @@
 const index = require('../db/index')
-let bandas = [index.lista];
+let bandas = index.lista
 const bandascontroller = {
     detalleBandas: (req,res) =>{
         return res.render('detalleBandas', {
