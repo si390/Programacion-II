@@ -8,11 +8,11 @@ router.get('/', function(req, res) {
 });
 
 router.get('/heroes', function (req,res) {
-    res.send(JSON.stringify(heroesController.nombre));
+    res.send(heroesController.id);
 });
 
 router.get('/heroes/detalle/id/:id', function (req,res) {
-    res.send(JSON.stringify(heroesController.id));
+    res.send(heroesController.nombre);
 });
 
 router.get('/heroes/detalle/id/:id/?ok', function (req,res) {

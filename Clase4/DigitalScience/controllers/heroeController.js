@@ -1,13 +1,13 @@
 var heroes = require('../db/science')
 const controller = {
     id: (req,res) => {
-        res.render("Lista de heroes " + heroes.id)},
+        res.send("Lista de heroes " + JSON.stringify(heroes.lista))},
     nombre: (req,res) => {
-        res.render("Listado de marca de autos " + heroes.lista.nombre)},
+        res.send("Listado de nombre de heroes " + JSON.stringify(heroes.lista.nombre))},
     profesion: (req,res) => {
-        res.render("Lista de colores de autos " + heroes.lista.profesion)},
+        res.send("Lista de profesiones de heroes " + JSON.stringify(heroes.lista.profesion))},
     resenia: (req,res) => {
-        res.render("Lista de autos por año " + heroes.lista.resenia)},
+        res.send("Reseña de heroes " + JSON.stringify(heroes.lista.resenia))},
 }
 
 module.exports = controller;
