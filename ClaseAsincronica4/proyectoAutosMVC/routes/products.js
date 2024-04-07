@@ -1,17 +1,15 @@
-var express = require('express');
-const productosController = require('../controllers/productController');
+let express = require('express');
+let router = express.Router();
+const productController = require('../controllers/productController.js');
 
-const router = express.Router();
+router.get('/', productController.index);
 
+router.get('/marca/:marca', productController.marca);
 
-router.get('/', productosController.index);
+router.get('/color/:color', productController.color);
 
-router.get('/marca', productosController.marca);
- 
-router.get('/color', productosController.color);
+router.get('/anio/:anio', productController.anio)
 
-router.get('/anio', productosController.anio);
-
-
+router.get('/modelo/:modelo/:anio?', productController.modelo);
 
 module.exports = router;

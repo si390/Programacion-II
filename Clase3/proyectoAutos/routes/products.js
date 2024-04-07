@@ -1,26 +1,15 @@
-const express = require('express');
-const router = express.Router();
+let express = require('express');
+let router = express.Router();
+const productController = require('../controllers/productController.js');
 
-const datosAutos = require('../db/index');
-router.get('/products', function (req, res) {
-    res.send(datosAutos);
-});
+router.get('/', productController.index);
 
-router.get('/products/brand', function (req,res) {
-    let marcaProducto = req.params.id;
-});
+router.get('/marca/:marca', productController.marca);
 
-router.get('/products/color', function (req,res) {
-    let colorProducto = req.params.id;
-});
+router.get('/color/:color', productController.color);
 
-router.get('/products/modelo', function (req,res) {
-    let modeloProducto = req.params.id;
-});
+router.get('/anio/:anio', productController.anio)
 
-router.get('/products/year', function (req,res) {
-    let yearProducto = req.params.id;
-});
-    
+router.get('/modelo/:modelo/:anio?', productController.modelo);
 
 module.exports = router;
