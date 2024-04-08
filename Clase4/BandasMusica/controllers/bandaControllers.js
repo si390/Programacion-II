@@ -1,25 +1,35 @@
-const index = require('../db/index')
-let bandas = index.lista
-const bandascontroller = {
-    detalleBandas: (req,res) =>{
-        return res.render('detalleBandas', {
-                                        nombre:bandas.nombre,
-                                        integrante: bandas.integrantes,
-                                        topCanciones: bandas.topCanciones,
+const bandas = require('../db/index');
 
-        })},
-    listadoBandas: (req,res) =>{
-        return res.render('listadoBandas', {
-                                        id:bandas.id,
-                                        video: bandas.video,
-                                        cover: bandas.cover,
+const lista = bandas.lista;
 
-        })},
-    genero: (req,res) => {
-        return res.render('porGenero', {genero: index.lista.genero})},
-    
+const bandasController = {
+  index: function (req, res) {
+    return res.render('listadoBandas', { title: "Bandas", lista: lista });
+  },
+  detalle: function (req, res) {
+    let banda;
+    for (let i = 0; i < lista.length; i++) {
+      if (lista[i].id == req.params.id) {
+        banda = lista[i];
+      }
     }
-    /*res.render envia la vista, procesa el archivo EJS */
-    
 
-module.exports = bandascontroller;
+    return res.render('detalleBandas', { title: "Detalle Bandas", banda: banda });
+  },
+  genero: function (req, res) {
+    let banda;
+    for (let i = 0; i < lista.length; i++) {
+      if (lista[i].id == req.params.id) {
+        banda = lista[i];
+      }
+    }
+
+    if (req.params.ok == "ok") {
+      return res.render('porGenero', { title: "Genero de Banda", banda: banda, ok: true });
+    } else {
+      return res.render('porGenero', { title: "Genero de Banda", banda: banda, ok: false });
+    }
+  }
+};
+
+module.exports = bandasController;

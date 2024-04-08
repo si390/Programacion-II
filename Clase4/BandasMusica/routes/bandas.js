@@ -1,16 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var bandasController = require('../controllers/bandaControllers');
 
+const bandaController = require('../controllers/bandaControllers');
 
-/* GET bandas page. */
-router.get('/', bandasController.detalleBandas); 
+/* GET home page. */
+router.get('/', bandaController.index);
 
-router.get('/:id', bandasController.listadoBandas);
+router.get('/id/:id', bandaController.detalle);
 
-router.get('/genero', bandasController.genero);
+router.get('/genero/id/:id/:ok?', bandaController.genero);
 
- 
 module.exports = router;
 
 

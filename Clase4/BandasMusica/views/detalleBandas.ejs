@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>DETALLE</h1>
-    <h2>Nombre de la banda: <%=nombre%></h2>
-    <h3>Integrantes de la banda:</h3>
-    <ol>
-      <li><%=integrante%></li>
-    </ol>
-    <h3>Top Canciones:</h3>
-    <ol>
-      <li><%=topCanciones%></li>
-    </ol>
-    <img src="images/acdc.jpg" alt="">
+    <h1><%= title %></h1>
+    <% if(banda !== undefined) { %>
+      <p>El nombre de la banda es <%= banda.nombre %> y su genero es <%= banda.genero %>.</p>
+      <p>Los integrantes son <%= banda.integrantes %> y sus mejores canciones son <%= banda.topCanciones %>.</p>
+    <% } else { %>
+      <p>No encontramos datos de la banda indicada. Por favor, elija otro id.</p>
+    <% } %>
   </body>
 </html>
-
-///<% %> permite incorporar condicionales y bucles
-///<%= %> permite imprimir un valor dinámico

@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>GENERO</h1>
-    <h2>Genero de la banda</h2>
-    <h3><%= genero %></h3>
-</body>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% if(banda !== undefined) { %>
+      <% if(ok == true) { %>
+      <p>El genero de la banda <%= banda.nombre %> es: <%= banda.genero %>.</p>
+      <% } else { %>
+        <p>El nombre de la banda es <%= banda.nombre %>. No encontramos un género.</p>
+      <% } %>
+    <% } else { %>
+      <p>No encontramos a la banda indicada. Por favor, elija otro id.</p>
+    <% } %>
+  </body>
 </html>

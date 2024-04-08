@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>BANDAS</h1>
-    <p>Listado</p>
-    <h2>Id de la banda: <%= id %></h2>
-    <h3>Video de la banda:</h3>
-    <span><%= video %></span>
-    <h3>Covers:</h3>
-    <ol>
-      <li><%= cover %></li>
-    </ol>
+    <h1><%= title %></h1>
+    <ul>
+      <% for (let i = 0; i < lista.length; i++) { %>
+        <li>
+          <h3>Banda #<%= lista[i].id %></h3>
+          <p><%= lista[i].integrantes %></p>
+        </li>
+      <% } %>
+    </ul>
   </body>
 </html>
