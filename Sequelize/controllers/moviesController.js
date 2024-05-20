@@ -3,13 +3,13 @@ let moviesController = {
     index: function(req, res){
         db.Movie.findAll()
         .then(function(data){
-            
+            return res.send(data)
         })
         .catch(function(err){
             console.log(err);
         })
-        let movieList = ['Rocky', 'Batman', 'Barbie', 'Iron Man'];
-        return res.render('movies', { title: 'Movies', listaPelis: movieList});
+        //let movieList = ['Rocky', 'Batman', 'Barbie', 'Iron Man'];
+        //return res.render('movies', { title: 'Movies', listaPelis: movieList});
     },
     show: function(req, res){
         return res.send(`Estamos en el detalle de la película: ${req.params.id}`)
