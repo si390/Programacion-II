@@ -8,7 +8,7 @@
     <h1>Cargar nueva película</h1>
 
     <%- include('./partials/menu') %>
-    <%= locals.usuarioLogueado.nombreDeUsuario %>
+    <%= locals.lastMovie %>
     <p>Form de carga</p>
     <form action="/movies/create" method="post">
       <input type="text" name="title" id="" value="" placeholder="Nombre de la película">

@@ -29,14 +29,13 @@ app.use(session({
   saveUninitialized: true,
 }));
 app.use(function(req,res,next){
-  res.locals.usuarioLogueado = {
-    nombreDeUsuario: 'Juan'
-  }
+  res.locals.lastMovie = req.session.lastMovie;
   return next();
 })
+
 app.use(function(req, res, next) {
-	if (req.session.usuarioLogueado != undefined) {
-		res.locals.user = req.session.usuarioLogueado	
+	if (req.session.lastMovie != undefined) {
+		res.locals.lastMovie = req.session.lastMovie
      }
 return next();
 });

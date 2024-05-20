@@ -23,6 +23,10 @@ let moviesController = {
     },
     store: function(req, res){
        //Completar
+       let ultimaPelicula = req.body.title;
+       req.session.lastMovie = ultimaPelicula;
+       //return res.send(req.session)
+       return res.redirect('/')
     }
 
 }

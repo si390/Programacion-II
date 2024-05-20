@@ -12,7 +12,7 @@
     <p>El término buscado es: <%= searchTerm %></p>
     <h2>Lista de películas</h2>
     <!-- Aquí debe ir la lista de resultados -->
-    <%= locals.usuarioLogueado.nombreDeUsuario %>
+    <%= locals.lastMovie %>
     <% if (locals.user != undefined) { %>
       <%- include('headerLogueado')
     <% } else { %>
