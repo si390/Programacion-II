@@ -1,5 +1,13 @@
+const db = require('../database/models')
 let moviesController = {
     index: function(req, res){
+        db.Movie.findAll()
+        .then(function(data){
+            
+        })
+        .catch(function(err){
+            console.log(err);
+        })
         let movieList = ['Rocky', 'Batman', 'Barbie', 'Iron Man'];
         return res.render('movies', { title: 'Movies', listaPelis: movieList});
     },
