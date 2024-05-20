@@ -22,10 +22,14 @@ let moviesController = {
         return res.render('searchResults', { title: 'Resultados de búsqueda', searchTerm })
     },
     store: function(req, res){
+        //Completar con guardado de la película en base de datos
+
        //Completar
        let ultimaPelicula = req.body.title;
        req.session.lastMovie = ultimaPelicula;
        //return res.send(req.session)
+       //Crear cookie
+       res.cookie('lastTitle', ultimaPelicula, {maxAge: 1000*60*1})
        return res.redirect('/')
     }
 
